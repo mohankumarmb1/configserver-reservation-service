@@ -1,4 +1,4 @@
-package com.cbt.configserverservice;
+package com.rs.configserverservice;
 
 import org.springframework.boot.test.context.SpringBootTest;
 

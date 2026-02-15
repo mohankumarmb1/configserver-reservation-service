@@ -1,4 +1,4 @@
-package com.cbt.reservationservice;
+package com.rs.configserverservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +12,6 @@ public class ConfigserverServiceApplication
 {
     public static void main(String[] args)
     {
-            SpringApplication.run(com.cbt.reservationservice.ConfigserverServiceApplication.class);
+            SpringApplication.run(ConfigserverServiceApplication.class, args);
     }
 }
