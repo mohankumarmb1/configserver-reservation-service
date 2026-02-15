@@ -1,9 +1,9 @@
-package com.rs.configserverservice;
+package com.rs.configserver;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ConfigserverServiceApplicationTests {
+class ConfigserverTests {
 
     //@Test
     void contextLoads() {

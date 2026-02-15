@@ -1,0 +1,67 @@
+#server:
+#  port: 8888
+#
+#spring:
+#  application:
+#    name: config-server
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/mohankumarmb1/config-server-properties.git
+#          default-label: main
+#          clone-on-start: true
+#          force-pull: true
+#
+#
+#logging:
+#  level:
+#    org.springframework.cloud.config.server: DEBUG
+
+spring:
+  application:
+    name: config-server
+  active-profiles: dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/mohankumarmb1/config-server-properties.git
+          default-label: main
+          clone-on-start: true
+  zipkin:
+    base-url: http://localhost:9411
+
+#uri: https://github.com/mohankumarmb1/config-server-properties.git
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${random.value}
+
+logging:
+  level:
+    org:
+      springframework: DEBUG
+
+zipkin:
+  baseUrl: http://localhost:9411
+
+server:
+  port: 8888
+#profiles:
+#  active: dev
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+
+
+
+
