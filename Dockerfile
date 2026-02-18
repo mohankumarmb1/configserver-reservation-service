@@ -5,10 +5,10 @@ FROM ubuntu:24.04 AS base
 RUN apt-get update && apt-get install -y openjdk-17-jdk \
     && rm -rf /var/lib/apt/lists/*
 
-LABEL authors="indiagator"
+LABEL authors="mkb"
 
 # Copy the JAR file into the container
-COPY target/configserverservice-prod-1.jar app.jar
+COPY target/config-server-dev.jar config-server.jar
 
 # Expose the port the app runs on
 EXPOSE 8888:8888
@@ -19,4 +19,4 @@ EXPOSE 8888:8888
 #RUN apt-get install -y curl
 
 # Run the application
-ENTRYPOINT ["java", "-Dspring.profiles.active=dev", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=dev", "-jar", "config-server.jar"]
